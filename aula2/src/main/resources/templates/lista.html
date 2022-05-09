@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:ref="@{'/styles/styles.css'}" />
+    <link
+			href="https://fonts.googleapis'.com/css2?family=Roboto&display=swap"
+			rel="stylesheet"
+	/>
+    <title>Lista de empregos</title>
+</head>
+<body>
+    <div class="cabeçalho">
+        <h1>Vagas de Empregos</h1>
+    </div>
+    <br>
+    <div>
+        <a href="/add">Adicione aqui a sua vaga</a><br>
+    </div>
+    <br>
+    <div th:each="emprego : ${empregos}" class="list">
+        <h4 th:inline="text"> [[${emprego.titulo}]] na [[${emprego.empresa}]] </h4>
+        <p th:text="${emprego.descricao}"> </p>
+    </div>
+</body>
+</html>
